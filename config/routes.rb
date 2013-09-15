@@ -4,6 +4,8 @@ Catalog::Application.routes.draw do
 
   resources :people
 
+  resources :addresses, :only => [:index, :new, :create, :destroy]
+
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
