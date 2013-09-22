@@ -1,0 +1,25 @@
+<h2> List of addresses </h2>
+<p>
+    <em> Number of addresses: </em>
+    <%= @addresses.count %>
+</p>
+
+<table>
+    <tr>
+        <th>Name</th>
+        <th>Destination</th>
+        <th>Street</th>
+        <th>Number</th>
+        <th>Postcode</th>
+    </tr>
+
+    <% @addresses.each do |address| %>
+        <tr>
+            <td> <%= link_to address.person.name, person_path(address.person_id) %> </td>
+            <td> <%=  address.destination %> </td>
+            <td> <%=  address.street %> </td>
+            <td> <%=  address.number %> </td>
+            <td> <%=  address.postcode %> </td>
+        </tr>
+    <% end %>
+</table>
