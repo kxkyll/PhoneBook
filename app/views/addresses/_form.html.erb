@@ -28,7 +28,7 @@
     <%= f.number_field :postcode %>
   </div>
   <div class="field">
-    <%= f.select :person_id, options_from_collection_for_select(@people, :id, :name) %>
+    <%= f.select :person_id, options_from_collection_for_select(@people, :id, :name, selected_key= @address.person_id) %>
   </div>
   
   <div class="actions">
