@@ -1,4 +1,8 @@
 <h1>Listing people</h1>
+<p>
+    <em> Number of people: </em>
+    <%= @people.count %>
+</p>
 
 <table>
   <tr>
@@ -21,6 +25,4 @@
 <br />
 
 <%= link_to 'New Person', new_person_path %>
-<p>
-  <%= link_to 'List phone numbers', phones_path %>
-</p>
+

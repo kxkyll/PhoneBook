@@ -1,4 +1,8 @@
 <h1>Listing phones</h1>
+<p>
+    <em> Number of phone numbers: </em>
+    <%= @phones.count %>
+</p>
 
 <table>
   <tr>
@@ -22,4 +26,4 @@
 
 <br />
 
-<%= link_to 'New Phone', new_phone_path %>
+<%= link_to 'New Phone number', new_phone_path %>
