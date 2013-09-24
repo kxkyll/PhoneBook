@@ -3,4 +3,7 @@ class Person < ActiveRecord::Base
 
   has_many :phones
   has_many :addresses
+  def to_s
+    "#{name}"
+  end
 end

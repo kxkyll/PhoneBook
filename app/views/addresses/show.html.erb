@@ -1,0 +1,13 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Address:</b>
+  <%= link_to @address.person.name, person_path(@address.person_id) %>
+  <%= @address.destination %>
+  <%= @address.street %>
+  <%= @address.number %>
+  <%= @address.postcode %>
+  <%= @address.destination %>
+</p>
+<p><%= link_to 'Addresses', addresses_path%> </p>
+

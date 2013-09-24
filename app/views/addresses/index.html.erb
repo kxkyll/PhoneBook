@@ -11,6 +11,9 @@
         <th>Street</th>
         <th>Number</th>
         <th>Postcode</th>
+        <th> </th>
+        <th> </th>
+        <th> </th>
     </tr>
 
     <% @addresses.each do |address| %>
@@ -20,6 +23,10 @@
             <td> <%=  address.street %> </td>
             <td> <%=  address.number %> </td>
             <td> <%=  address.postcode %> </td>
+            <td><%= link_to 'Show', address %></td>
+            <td><%= link_to 'Edit', edit_address_path(address) %></td>
+            <td><%= link_to 'Destroy', address, method: :delete, data: { confirm: 'Are you sure?' } %></td>
         </tr>
     <% end %>
 </table>
+<p> <%= link_to 'New', new_address_path%></p>

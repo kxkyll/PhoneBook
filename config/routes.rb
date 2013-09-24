@@ -4,7 +4,7 @@ Catalog::Application.routes.draw do
 
   resources :people
 
-  resources :addresses, :only => [:index, :new, :create, :destroy]
+  resources :addresses, :only => [:index, :new, :create, :destroy, :edit, :show, :update]
 
 
   # The priority is based upon order of creation:
