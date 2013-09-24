@@ -1,4 +1,5 @@
 class AddressesController < ApplicationController
+    before_filter :authenticate, :only => [:destroy]
   def index
     @addresses = Address.all
   end
@@ -67,6 +68,18 @@ class AddressesController < ApplicationController
       format.html { redirect_to addresses_url }
       format.json { head :no_content }
     end
+  end
+  private
+  def authenticate
+    admins = {"kati" => "kkkk", "muu" => "vieras"}
+    authenticate_or_request_with_http_basic do |username, password|
+            if  admins.has_key?(username)
+                admins[username] == password
+
+            else
+                false
+            end       
+        end
   end
 
 end
