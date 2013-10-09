@@ -6,25 +6,22 @@
 
 <table>
     <tr>
-        <!--<th>Name</th> -->
-        <th>Destination</th>
-        <th>Number of People</th>
         <th>Street</th>
         <th>Number</th>
         <th>Postcode</th>
-        <th> </th>
-        <th> </th>
-        <th> </th>
+        <th>City</th>
+        <th>Destination</th>
+        <th>Number of People</th>
     </tr>
 
     <% @addresses.each do |address| %>
-        <tr>
-    
-            <td> <%=  address.destination %> </td>
-            <td> <%=  address.people.count %> </td>
-            <td> <%=  address.street %> </td>
+        <tr>       
+            <td> <%=  address.street.humanize %> </td>
             <td> <%=  address.number %> </td>
             <td> <%=  address.postcode %> </td>
+            <td> <%=  address.city %> </td>
+            <td> <%=  address.destination %> </td>
+            <td> <%=  address.people.count %> </td>
             <td><%= link_to 'Show', address %></td>
             <td><%= link_to 'Edit', edit_address_path(address) %></td>
             <td><%= link_to 'Destroy', address, method: :delete, data: { confirm: 'Are you sure?' } %></td>

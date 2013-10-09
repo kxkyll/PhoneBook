@@ -1,7 +1,9 @@
 class AddressesController < ApplicationController
     before_filter :authenticate, :only => [:destroy]
   def index
+    @addresses = Address.order("street")
     @addresses = Address.all
+
   end
   def show
     @address = Address.find(params[:id])
@@ -28,9 +30,11 @@ class AddressesController < ApplicationController
     @people = Person.all
     @destinations = ["home" ,"cottage", "office", "other"]
   end
+
   def create
     @address = Address.new(params[:address])
-
+    @people = Person.all
+    @destinations = ["home" ,"cottage", "office", "other"]
     respond_to do |format|
       if @address.save
         format.html { redirect_to @address, notice: 'Address was successfully created.' }
@@ -46,7 +50,8 @@ class AddressesController < ApplicationController
   # PUT /addresses/1.json
   def update
     @address = Address.find(params[:id])
-
+    @people = Person.all
+    @destinations = ["home" ,"cottage", "office", "other"]
     respond_to do |format|
       if @address.update_attributes(params[:address])
         format.html { redirect_to @address, notice: 'Address was successfully updated.' }
