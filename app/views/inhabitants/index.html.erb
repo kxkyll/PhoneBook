@@ -1,0 +1,25 @@
+<h1>Listing inhabitants</h1>
+
+<table>
+  <tr>
+    <th>Person</th>
+    <th>Address</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @inhabitants.each do |inhabitant| %>
+  <tr>
+    <td><%= inhabitant.person %></td>
+    <td><%= inhabitant.address %></td>
+    <td><%= link_to 'Show', inhabitant %></td>
+    <td><%= link_to 'Edit', edit_inhabitant_path(inhabitant) %></td>
+    <td><%= link_to 'Destroy', inhabitant, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Inhabitant', new_inhabitant_path %>

@@ -1,4 +1,10 @@
 Catalog::Application.routes.draw do
+  resources :emails
+
+
+  resources :inhabitants
+
+
   resources :phones
 
 

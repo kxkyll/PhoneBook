@@ -5,6 +5,9 @@ gem 'rails', '3.2.14'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
+#email validator
+gem 'validates_email_format_of'
+
 group :development, :test do
   gem 'sqlite3'
 end

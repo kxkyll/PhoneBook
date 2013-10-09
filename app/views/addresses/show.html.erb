@@ -2,12 +2,18 @@
 
 <p>
   <b>Address:</b>
-  <%= link_to @address.person.name, person_path(@address.person_id) %>
+  <!--<%= link_to @address.person.name, person_path(@address.person_id) %> -->
   <%= @address.destination %>
   <%= @address.street %>
   <%= @address.number %>
-  <%= @address.postcode %>
-  <%= @address.destination %>
+ </p>
+
+<p>
+    <% @address.people.each do |person| %>
+        <%= link_to person, person %> </br>
+    <% end %>
+
 </p>
+
 <p><%= link_to 'Addresses', addresses_path%> </p>
 

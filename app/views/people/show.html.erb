@@ -7,7 +7,21 @@
 
 <p>
     <% @person.phones.each do |phone| %>
-        <%= link_to phone.number, phone %>
+        <%= link_to phone.number, phone %> </br>
+    <% end %>
+
+</p>
+
+<p>
+    <% @person.addresses.each do |address| %>
+        <%= link_to address, address %> </br>
+    <% end %>
+
+</p>
+
+<p>
+    <% @person.emails.each do |email| %>
+        <%= link_to email, email %> </br>
     <% end %>
 
 </p>

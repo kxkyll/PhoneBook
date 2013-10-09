@@ -6,8 +6,9 @@
 
 <table>
     <tr>
-        <th>Name</th>
+        <!--<th>Name</th> -->
         <th>Destination</th>
+        <th>Number of People</th>
         <th>Street</th>
         <th>Number</th>
         <th>Postcode</th>
@@ -18,8 +19,9 @@
 
     <% @addresses.each do |address| %>
         <tr>
-            <td> <%= link_to address.person.name, person_path(address.person_id) %> </td>
+    
             <td> <%=  address.destination %> </td>
+            <td> <%=  address.people.count %> </td>
             <td> <%=  address.street %> </td>
             <td> <%=  address.number %> </td>
             <td> <%=  address.postcode %> </td>

@@ -1,5 +1,10 @@
 class Address < ActiveRecord::Base
-  attr_accessible :number, :person_id, :postcode, :street, :destination
-  belongs_to :person
+  attr_accessible :number, :postcode, :street, :destination
+  has_many :inhabitants
+  has_many :people, :through => :inhabitants
+
+  def to_s
+    "#{street} #{number} #{postcode} #{destination} "
+  end
   
 end

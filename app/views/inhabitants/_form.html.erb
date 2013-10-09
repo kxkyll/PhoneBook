@@ -1,0 +1,27 @@
+<%= form_for(@inhabitant) do |f| %>
+  <% if @inhabitant.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@inhabitant.errors.count, "error") %> prohibited this inhabitant from being saved:</h2>
+
+      <ul>
+      <% @inhabitant.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :person_id %><br />
+    <%= f.select :person_id, options_from_collection_for_select(@people, :id, :to_s, 
+        selected_key = @inhabitant.person_id)%>
+  </div>
+  <div class="field">
+    <%= f.label :address_id %><br />
+    <%= f.select :address_id, options_from_collection_for_select(@addresses, :id, :to_s, 
+        selected_key = @inhabitant.address_id)%>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
