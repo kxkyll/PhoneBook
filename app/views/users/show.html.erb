@@ -2,14 +2,11 @@
 
 <p>
   <b>Username:</b>
-  <%= @user.username %>
-</p>
-
-<p>
-  <b>Password digest:</b>
-  <%= @user.password_digest %>
+  <%= link_to @user.username, edit_user_path(@user) %>
+  <%= link_to 'Edit', edit_user_path(@user) %> |
+  <%= link_to 'Destroy', @user, method: :delete, data: { confirm: 'Are you sure?' } %>
 </p>
 
 
-<%= link_to 'Edit', edit_user_path(@user) %> |
+
 <%= link_to 'Back', users_path %>

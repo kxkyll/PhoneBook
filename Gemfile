@@ -8,6 +8,9 @@ gem 'rails', '3.2.14'
 #email validator
 gem 'validates_email_format_of'
 
+#for saving password digest
+gem 'bcrypt-ruby', '~> 3.0.0'
+
 group :development, :test do
   gem 'sqlite3'
 end
