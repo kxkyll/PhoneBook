@@ -1,14 +1,21 @@
 Catalog::Application.routes.draw do
- 
+  
+  root :to => 'people#index'
   resources :emails
   resources :inhabitants
   resources :phones
   resources :people
   resources :addresses, :only => [:index, :new, :create, :destroy, :edit, :show, :update]
   resources :users
-  get 'register', to: 'users#new'
-  resources :sessions, :only => [:new, :create, :destroy]
+  
 
+  get 'register', to: 'users#new'
+  get 'signin', to: 'sessions#new'
+  get 'signout', to: 'sessions#destroy'
+  resources :sessions, :only => [:new, :create, :destroy]
+  
+
+  
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

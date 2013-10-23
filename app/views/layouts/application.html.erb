@@ -13,12 +13,19 @@
     <%= link_to 'addresses', addresses_path %>
     <%= link_to 'add address to a person', new_inhabitant_path %>
     <%= link_to 'emails', emails_path %>
-    <% if not session[:user_id].nil? %>
-        <p><%= User.find(session[:user_id]).username %> signed in</p>
-    <% end %>
-
+    
+    <% if not current_user.nil? %>
+          <%= link_to current_user.username.titleize, current_user %> 
+          <%=link_to 'create a user', new_user_path %>
+          <%=link_to 'list users', users_path %>
+          <%=link_to 'signout', signout_path %>
+        <% else %>
+          <%=link_to 'signin', signin_path %>
+          <%=link_to 'register', register_path %>
+          
+        <% end %>
   </div>
-
+  <p id="notice"><%= notice %></p>  
 <%= yield %>
 
 </body>
