@@ -13,6 +13,9 @@
     <%= link_to 'addresses', addresses_path %>
     <%= link_to 'add address to a person', new_inhabitant_path %>
     <%= link_to 'emails', emails_path %>
+    <% if not session[:user_id].nil? %>
+        <p><%= User.find(session[:user_id]).username %> signed in</p>
+    <% end %>
 
   </div>
 
