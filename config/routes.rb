@@ -1,5 +1,8 @@
 Catalog::Application.routes.draw do
   
+  resources :collections
+
+
   root :to => 'people#index'
   resources :emails
   resources :inhabitants
