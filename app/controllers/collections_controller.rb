@@ -3,7 +3,8 @@ class CollectionsController < ApplicationController
   # GET /collections.json
   def index
     @collections = Collection.all
-   
+    @users = User.all
+
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @collections }
@@ -14,7 +15,8 @@ class CollectionsController < ApplicationController
   # GET /collections/1.json
   def show
     @collection = Collection.find(params[:id])
-
+    @users = User.all
+    
     respond_to do |format|
       format.html # show.html.erb
       format.json { render json: @collection }
@@ -25,6 +27,7 @@ class CollectionsController < ApplicationController
   # GET /collections/new.json
   def new
     @collection = Collection.new
+    @users = User.all
 
     respond_to do |format|
       format.html # new.html.erb
@@ -35,12 +38,15 @@ class CollectionsController < ApplicationController
   # GET /collections/1/edit
   def edit
     @collection = Collection.find(params[:id])
+    @users = User.all
+
   end
 
   # POST /collections
   # POST /collections.json
   def create
     @collection = Collection.new(params[:collection])
+    @users = User.all
 
     respond_to do |format|
       if @collection.save
@@ -57,6 +63,7 @@ class CollectionsController < ApplicationController
   # PUT /collections/1.json
   def update
     @collection = Collection.find(params[:id])
+    @users = User.all
 
     respond_to do |format|
       if @collection.update_attributes(params[:collection])

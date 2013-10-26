@@ -2,14 +2,12 @@
 <p> <% if current_user.nil? %>
           no user signed in
     <% else %>
-          <%= pluralize(@user.collections.count, 'collection') %>
+          <%= pluralize(current_user.collections.count, 'collection') %>
     <% end %>
 </p>
 
 
-<% if current_user.nil? %>
-    
-<% else %>
+<% if not current_user.collections.empty? %>
 
     <table>
       <tr>
