@@ -3,7 +3,7 @@ class CollectionsController < ApplicationController
   # GET /collections.json
   def index
     @collections = Collection.all
-
+   
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @collections }
